@@ -15,9 +15,13 @@ public class MainController {
     }
 
     @GetMapping("/workpermit/loto")
+
     public String wpl(Model model) {
-        return "redirect:http://46.249.7.119:8080/workpermit/loto";
+        String ip = "http://" + "37.1.41.228" + ":8080/";
+
+        return "redirect:" + ip + "workpermit/loto";
     }
+
     @PostMapping("/workpermit/loto/regLOTO")
     public String wplr(Model model) {
         return "redirect:http://46.249.7.119:8080/regLOTO";
