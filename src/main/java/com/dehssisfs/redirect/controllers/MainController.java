@@ -17,7 +17,7 @@ public class MainController {
     @GetMapping("/workpermit/loto")
 
     public String wpl(Model model) {
-        String ip = "http://" + "37.1.3.194" + ":8080/";
+        String ip = "http://" + "37.1.13.137" + ":8080/";
 
         return "redirect:" + ip + "workpermit/loto";
     }
