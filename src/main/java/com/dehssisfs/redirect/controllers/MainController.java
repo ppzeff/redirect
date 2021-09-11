@@ -25,6 +25,12 @@ public class MainController {
         return "Ok";
     }
 
+    @ResponseBody
+    @GetMapping("/getip")
+    public String getIp(Model model) {
+        return staticIp;
+    }
+
     @GetMapping("/workpermit/loto")
     public String wpl(Model model) {
         return "redirect:http://" + staticIp + ":8080/workpermit/loto";
