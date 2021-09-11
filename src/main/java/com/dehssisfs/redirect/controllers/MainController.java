@@ -3,10 +3,12 @@ package com.dehssisfs.redirect.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
+    static String staticIp = "";
 
     @GetMapping("/")
     public String home(Model model) {
@@ -14,17 +16,18 @@ public class MainController {
         return "home";
     }
 
-    @GetMapping("/workpermit/loto")
-
-    public String wpl(Model model) {
-        String ip = "http://" + "37.1.13.137" + ":8080/";
-
-        return "redirect:" + ip + "workpermit/loto";
+    @ResponseBody
+    @GetMapping("/ip/{ip}")
+    public String newIp(@PathVariable(value = "ip") String ip, Model model) {
+        staticIp = ip;
+//        System.out.println(staticIp);
+        model.addAttribute("title", "Главная страница");
+        return "Ok";
     }
 
-    @PostMapping("/workpermit/loto/regLOTO")
-    public String wplr(Model model) {
-        return "redirect:http://46.249.7.119:8080/regLOTO";
+    @GetMapping("/workpermit/loto")
+    public String wpl(Model model) {
+        return "redirect:http://" + staticIp + ":8080/workpermit/loto";
     }
 
 }
