@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
-    static String staticIp = "";
+    static String staticIp = "37.1.13.137";
 
     @GetMapping("/")
     public String home(Model model) {
@@ -17,17 +17,18 @@ public class MainController {
     }
 
     @ResponseBody
-    @GetMapping("/ip/{ip}")
+    @GetMapping("/setip/{ip}")
     public String newIp(@PathVariable(value = "ip") String ip, Model model) {
         staticIp = ip;
 //        System.out.println(staticIp);
-        model.addAttribute("title", "Главная страница");
-        return "Ok";
+        model.addAttribute("title", "Установка IP");
+        return "Ok, set IP: " + ip;
     }
 
     @ResponseBody
     @GetMapping("/getip")
     public String getIp(Model model) {
+        model.addAttribute("title", "Текущий IP");
         return staticIp;
     }
 
