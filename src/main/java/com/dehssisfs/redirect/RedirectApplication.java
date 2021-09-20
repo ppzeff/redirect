@@ -35,7 +35,7 @@ public class RedirectApplication {
     public void scheduled1() throws IOException {
         System.out.println(IpService.getIpAddress());
 
-        HttpGet get = new HttpGet("https://dehssisfs.herokuapp.com/getip" + "/");
+        HttpGet get = new HttpGet("https://dehssisfs.herokuapp.com/getip");
 //            HttpGet get = new HttpGet("http://localhost:8081/ip/" + IpService.getIpAddress()+"/");
         HttpClient client = new DefaultHttpClient();
         HttpResponse response = client.execute(get);

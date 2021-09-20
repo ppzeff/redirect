@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
-    static String staticIp = "37.1.13.137";
+    static String staticIp = "37.1.40.16";
 
     @GetMapping("/")
     public String home(Model model) {
@@ -35,6 +35,11 @@ public class MainController {
     @GetMapping("/workpermit/loto")
     public String wpl(Model model) {
         return "redirect:http://" + staticIp + ":8080/workpermit/loto";
+    }
+
+    @GetMapping("/workpermit/loto/allview")
+    public String allviewLotoNd(Model model) {
+        return "redirect:http://" + staticIp + ":8080//workpermit/loto/allview";
     }
 
 }
