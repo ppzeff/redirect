@@ -42,4 +42,10 @@ public class MainController {
         return "redirect:http://" + staticIp + ":8080//workpermit/loto/allview";
     }
 
+    @GetMapping("/waste/shiftreport")
+    public String wasteshiftreport(Model model) {
+        return "redirect:http://" + staticIp + ":8080//waste/shiftreport";
+    }
+
+
 }
