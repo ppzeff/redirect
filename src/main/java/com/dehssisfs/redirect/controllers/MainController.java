@@ -40,17 +40,17 @@ public class MainController {
 
     @GetMapping("/workpermit/loto/allview")
     public String allviewLotoNd(Model model) {
-        return "redirect:http://" + staticIp + ":8080//workpermit/loto/allview";
+        return "redirect:http://" + staticIp + ":8080/workpermit/loto/allview";
     }
 
     @GetMapping("/waste/shiftreport")
     public String wasteshiftreport(Model model) {
-        return "redirect:http://" + staticIp + ":8080//waste/shiftreport";
+        return "redirect:http://" + staticIp + ":8080/waste/shiftreport";
     }
 
     @GetMapping("/genqr")
     public String genqr(Model model) {
-        return "redirect:http://" + staticIp + ":8080//genqr";
+        return "redirect:http://" + staticIp + ":8080/genqr";
     }
 
     @ResponseBody
